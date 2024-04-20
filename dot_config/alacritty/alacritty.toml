@@ -1,0 +1,29 @@
+import = [
+# "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+decorations = "None"
+opacity = 0.75
+blur = true
+startup_mode = "Maximized"
+
+[scrolling]
+history = 100000
+
+[font]
+normal = { family = "GeistMono Nerd Font Mono", style = "Regular" }
+# TODO: Define italic font
+
+size = 14.5
+
+[cursor]
+style = { shape="Underline" }
+
+[mouse]
+hide_when_typing = true
+
+
