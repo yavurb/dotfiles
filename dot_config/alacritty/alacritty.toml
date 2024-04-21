@@ -1,5 +1,6 @@
 import = [
-# "~/.config/alacritty/catppuccin-mocha.toml"
+  # "~/.config/alacritty/catppuccin-mocha.toml"
+  "~/.config/alacritty/themes/themes/gruvbox_material_hard_dark.toml"
 ]
 
 [env]
@@ -10,12 +11,14 @@ decorations = "None"
 opacity = 0.75
 blur = true
 startup_mode = "Maximized"
+decorations_theme_variant = "Dark"
 
 [scrolling]
 history = 100000
 
 [font]
-normal = { family = "GeistMono Nerd Font Mono", style = "Regular" }
+normal = { family = "GeistMono Nerd Font Mono", style = "Light" }
+bold = { style = "SemiBold" }
 # TODO: Define italic font
 
 size = 14.5
@@ -25,5 +28,3 @@ style = { shape="Underline" }
 
 [mouse]
 hide_when_typing = true
-
-
