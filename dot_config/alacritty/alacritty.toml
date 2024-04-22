@@ -12,6 +12,7 @@ opacity = 0.75
 blur = true
 startup_mode = "Maximized"
 decorations_theme_variant = "Dark"
+dynamic_padding = true
 
 [scrolling]
 history = 100000
