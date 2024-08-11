@@ -7,6 +7,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
 
     "fredrikaverpil/neotest-golang",
+    "nvim-neotest/neotest-python",
   },
   opts = {
     adapters = {
@@ -20,5 +21,6 @@ return {
         dap_go_enabled = true,
       },
     },
+    "neotest-python",
   },
 }
