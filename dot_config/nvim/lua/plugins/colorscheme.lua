@@ -92,6 +92,7 @@ return {
         mocha = function(_)
           return {
             LspInlayHint = { bg = "bg" },
+            CursorLine = { bg = "bg" },
           }
         end,
       },
