@@ -3,6 +3,14 @@ return {
     "nvim-telescope/telescope.nvim",
     opts = {
       defaults = {
+        pickers = {
+          find_files = {
+            hidden = true,
+          },
+        },
+        path_display = {
+          "filename_first",
+        },
         layout_strategy = "horizontal",
         layout_config = {
           prompt_position = "top",
