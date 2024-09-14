@@ -20,7 +20,10 @@ return {
         },
         dap_go_enabled = true,
       },
+      -- FIXME: This is not working
+      ["neotest-python"] = {
+        args = { "-v" },
+      },
     },
-    "neotest-python",
   },
 }

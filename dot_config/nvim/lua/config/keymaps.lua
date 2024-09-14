@@ -4,4 +4,4 @@
 
 local map = vim.keymap.set
 
-map("n", "ss", "<Esc>:w<Cr>")
+map("n", "ss", "<cmd>w<cr>", { silent = true })

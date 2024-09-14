@@ -89,13 +89,17 @@ return {
         },
       },
       highlight_overrides = {
-        mocha = function(_)
+        mocha = function(colors)
           return {
             LspInlayHint = { bg = "bg" },
             CursorLine = { bg = "bg" },
+            -- TelescopePromptBorder = { bg = colors.none, fg = colors.pink },
+            -- TelescopeResultsBorder = { bg = colors.none, fg = colors.pink },
+            -- TelescopePreviewBorder = { bg = colors.none, fg = colors.pink },
           }
         end,
       },
+      transparent_background = true,
       integrations = {
         telescope = {
           enable = true,
