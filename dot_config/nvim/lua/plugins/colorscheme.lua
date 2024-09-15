@@ -81,6 +81,7 @@ return {
     name = "catppuccin",
     priority = 1000,
     opts = {
+      flavour = "mocha",
       color_overrides = {
         mocha = {
           base = "#0e0e0e",
@@ -89,23 +90,20 @@ return {
         },
       },
       highlight_overrides = {
-        mocha = function(colors)
+        mocha = function(_)
           return {
             LspInlayHint = { bg = "bg" },
             CursorLine = { bg = "bg" },
-            -- TelescopePromptBorder = { bg = colors.none, fg = colors.pink },
-            -- TelescopeResultsBorder = { bg = colors.none, fg = colors.pink },
-            -- TelescopePreviewBorder = { bg = colors.none, fg = colors.pink },
           }
         end,
       },
       transparent_background = true,
-      integrations = {
-        telescope = {
-          enable = true,
-          style = "nvchad",
-        },
-      },
+      -- integrations = {
+      --   telescope = {
+      --     enable = true,
+      --     style = "nvchad",
+      --   },
+      -- },
     },
   },
   {
