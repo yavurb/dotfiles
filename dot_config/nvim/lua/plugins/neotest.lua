@@ -1,29 +1,27 @@
 return {
-  "nvim-neotest/neotest",
-  dependencies = {
-    "nvim-neotest/nvim-nio",
-    "nvim-lua/plenary.nvim",
-    "antoinemadec/FixCursorHold.nvim",
-    "nvim-treesitter/nvim-treesitter",
-
-    "fredrikaverpil/neotest-golang",
-    "nvim-neotest/neotest-python",
-  },
-  opts = {
-    adapters = {
-      ["neotest-golang"] = {
-        go_test_args = {
-          "-v",
-          "-race",
-          "-count=1",
-          "-coverprofile=" .. vim.fn.getcwd() .. "/coverage.out",
+  {
+    "nvim-neotest/neotest",
+    lazy = true,
+    opts = {
+      adapters = {
+        ["neotest-golang"] = {
+          go_test_args = {
+            "-v",
+            "-race",
+            "-count=1",
+            "-coverprofile=" .. vim.fn.getcwd() .. "/coverage.out",
+          },
+          dap_go_enabled = true,
         },
-        dap_go_enabled = true,
-      },
-      -- FIXME: This is not working
-      ["neotest-python"] = {
-        args = { "-v" },
+        ["neotest-python"] = {
+          args = { "-v" },
+        },
       },
     },
   },
+  { "nvim-neotest/nvim-nio", lazy = true },
+  { "antoinemadec/FixCursorHold.nvim", lazy = true },
+  { "nvim-treesitter/nvim-treesitter", lazy = true },
+  { "fredrikaverpil/neotest-golang", lazy = true },
+  { "nvim-neotest/neotest-python", lazy = true },
 }

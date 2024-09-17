@@ -1,6 +1,7 @@
 return {
   {
     "sainnhe/everforest",
+    lazy = true,
     enable = false,
     config = function()
       vim.g.everforest_background = "hard"
@@ -9,6 +10,7 @@ return {
   },
   {
     "sainnhe/gruvbox-material",
+    lazy = true,
     enable = false,
     config = function()
       vim.g.gruvbox_material_background = "hard"
@@ -34,6 +36,7 @@ return {
   },
   {
     "EdenEast/nightfox.nvim",
+    lazy = true,
     enable = false,
     opts = {
       options = {
@@ -59,6 +62,7 @@ return {
   },
   {
     "rebelot/kanagawa.nvim",
+    lazy = true,
     enable = false,
     opts = {
       commentStyle = { italic = true },
@@ -90,20 +94,14 @@ return {
         },
       },
       highlight_overrides = {
-        mocha = function(_)
+        mocha = function()
           return {
-            LspInlayHint = { bg = "bg" },
-            CursorLine = { bg = "bg" },
+            LspInlayHint = { bg = "#0e0e0e" },
+            CursorLine = { bg = "#0e0e0e" },
           }
         end,
       },
       transparent_background = true,
-      -- integrations = {
-      --   telescope = {
-      --     enable = true,
-      --     style = "nvchad",
-      --   },
-      -- },
     },
   },
   {
