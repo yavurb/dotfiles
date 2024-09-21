@@ -1,0 +1,16 @@
+#!/bin/bash
+
+{{ if eq .chezmoi.os "darwin" -}}
+brew install fish
+echo &(which fish) | sudo tee -a /etc/shells
+chsh -s /usr/local/bin/fish
+{{ else if eq .chezmoi.os "linux" -}}
+{{   if eq .chezmoi.osRelease.id "ubuntu" -}}
+sudo apt-add-repository ppa:fish-shell/release-3
+sudo apt update
+sudo apt install fish
+chsh -s $(which fish)
+{{   end -}}
+{{ end -}}
+
+fish -c 'curl -sL "https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish" | source && fisher install jorgebucaran/fisher'

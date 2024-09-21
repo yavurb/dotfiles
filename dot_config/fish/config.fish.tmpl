@@ -5,6 +5,14 @@ end
 # Disable the fish greeting message
 set fish_greeting ""
 
+{{ if eq .chezmoi.os "darwin" }}
+# darwin
+{{ else if eq .chezmoi.os "linux" }}
+set PATH "$PATH:/opt/nvim-linux64/bin"
+{{ else }}
+# other operating system
+{{ end }}
+
 # GO Path
 set GOPATH "$HOME/go"
 set PATH "$PATH:$GOPATH/bin"
@@ -18,12 +26,22 @@ set PATH "$ANDROID_HOME/platform-tools:$PATH"
 set DENO_INSTALL "/Users/yurb/.deno"
 set PATH "$DENO_INSTALL/bin:$PATH"
 # PDM
-set PATH "/Users/yurb/.local/bin:$PATH"
+set PATH "$HOME/.local/bin:$PATH"
 
 # Posgresql
 set PATH "/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 set -U EDITOR nvim
+
+-## Pyenv setup
+-if type -q pyenv
+-    status --is-interactive; and source (pyenv init -|psub)
+-end
+ 
+-# Plugs
+-starship init fish | source
+-zoxide init fish | source
+-source ~/.asdf/asdf.fish
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/yurb/google-cloud-sdk/path.fish.inc' ]
