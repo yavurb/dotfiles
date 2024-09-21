@@ -6,7 +6,6 @@ end
 set fish_greeting ""
 
 {{ if eq .chezmoi.os "darwin" }}
-# darwin
 {{ else if eq .chezmoi.os "linux" }}
 set PATH "$PATH:/opt/nvim-linux64/bin"
 {{ else }}
@@ -17,6 +16,10 @@ set PATH "$PATH:/opt/nvim-linux64/bin"
 set GOPATH "$HOME/go"
 set PATH "$PATH:$GOPATH/bin"
 
+# Rust Path
+set RUSTPATH "$HOME/.cargo"
+set PATH "$PATH:$RUSTPATH/bin"
+
 # Android studio
 set ANDROID_HOME "$HOME/.android-sdk"
 set PATH "$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
@@ -25,6 +28,7 @@ set PATH "$ANDROID_HOME/platform-tools:$PATH"
 # Deno
 set DENO_INSTALL "/Users/yurb/.deno"
 set PATH "$DENO_INSTALL/bin:$PATH"
+
 # PDM
 set PATH "$HOME/.local/bin:$PATH"
 

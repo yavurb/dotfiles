@@ -4,6 +4,7 @@
 brew install fish
 echo &(which fish) | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
+fish -c 'fish_add_path /opt/homebrew/bin/'
 {{ else if eq .chezmoi.os "linux" -}}
 {{   if eq .chezmoi.osRelease.id "ubuntu" -}}
 sudo apt-add-repository ppa:fish-shell/release-3
