@@ -8,6 +8,12 @@ set fish_greeting ""
 {{ if eq .chezmoi.os "darwin" }}
 {{ else if eq .chezmoi.os "linux" }}
 set PATH "$PATH:/opt/nvim-linux64/bin"
+
+# ls abbreviations
+if type -q eza
+    abbr --add ll eza --long --classify --all --header --git --no-user --tree --level 1 --icons --classify
+    abbr --add ls eza --icons
+end
 {{ else }}
 # other operating system
 {{ end }}
@@ -15,6 +21,7 @@ set PATH "$PATH:/opt/nvim-linux64/bin"
 # GO Path
 set GOPATH "$HOME/go"
 set PATH "$PATH:$GOPATH/bin"
+set PATH "$PATH:/usr/local/go/bin"
 
 # Rust Path
 set RUSTPATH "$HOME/.cargo"
@@ -35,12 +42,12 @@ set PATH "$HOME/.local/bin:$PATH"
 # Posgresql
 set PATH "/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
-set -U EDITOR nvim
+## Pyenv
+set -Ux PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
+pyenv init - | source
 
-## Pyenv setup
-if type -q pyenv
-    status --is-interactive; and source (pyenv init -|psub)
-end
+set -U EDITOR nvim
  
 # Plugs
 starship init fish | source
