@@ -44,7 +44,7 @@ set PATH "/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 ## Pyenv
 set -Ux PYENV_ROOT $HOME/.pyenv
-fish_add_path $PYENV_ROOT/bin
+set PATH "$PATH:$PYENV_ROOT/bin"
 pyenv init - | source
 
 set -U EDITOR nvim
