@@ -1,0 +1,10 @@
+#!/bin/sh
+
+{{ if eq .chezmoi.os "darwin" -}}
+brew install tmux
+{{ else if eq .chezmoi.os "linux" -}}
+sudo apt install -y tmux
+{{ end -}}
+
+sudo -rf ~/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

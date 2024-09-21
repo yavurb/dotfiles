@@ -5,6 +5,8 @@ end
 # Disable the fish greeting message
 set fish_greeting ""
 
+set -U EDITOR nvim
+
 {{ if eq .chezmoi.os "darwin" }}
 {{ else if eq .chezmoi.os "linux" }}
 set PATH "$PATH:/opt/nvim-linux64/bin"
@@ -46,8 +48,6 @@ set PATH "/opt/homebrew/opt/postgresql@15/bin:$PATH"
 set -Ux PYENV_ROOT $HOME/.pyenv
 set PATH "$PATH:$PYENV_ROOT/bin"
 pyenv init - | source
-
-set -U EDITOR nvim
  
 # Plugs
 starship init fish | source
