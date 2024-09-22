@@ -1,0 +1,27 @@
+#!/bin/bash
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+# Install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install git
+brew install git
+
+# Install wget
+brew install wget
+
+{{ else if eq .chezmoi.os "linux" -}}
+{{   if eq .chezmoi.osRelease.id "ubuntu" -}}
+
+# install git
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update
+sudo apt install -y git
+
+# install wget
+sudo apt install -y wget
+
+{{   end -}}
+{{ end -}}
+
