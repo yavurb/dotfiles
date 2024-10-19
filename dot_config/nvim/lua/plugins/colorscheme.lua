@@ -96,8 +96,8 @@ return {
       highlight_overrides = {
         mocha = function(colors)
           return {
-            LspInlayHint = { bg = "#0e0e0e" },
-            CursorLine = { bg = "#0e0e0e" },
+            LspInlayHint = { bg = colors.base },
+            CursorLine = { bg = colors.base },
             TelescopePromptBorder = { fg = colors.green, bg = colors.none },
             TelescopeBorder = { fg = colors.green, bg = colors.none },
           }
