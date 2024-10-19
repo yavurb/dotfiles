@@ -24,3 +24,10 @@ map("i", "<c-s-k>", "<esc>:m .-2<cr>==gi", { silent = true, noremap = true })
 -- Markview keymaps (subset of Obsidian keymaps)
 map("n", "<leader>op", "<cmd>Markview splitToggle<cr>", { silent = true, desc = "Toggle preview" })
 map("n", "<leader>oa", "<cmd>Markview toggle<cr>", { silent = true, desc = "Toggle" })
+
+-- Smart splits
+map("n", "<C-h>", require("smart-splits").move_cursor_left)
+map("n", "<C-j>", require("smart-splits").move_cursor_down)
+map("n", "<C-k>", require("smart-splits").move_cursor_up)
+map("n", "<C-l>", require("smart-splits").move_cursor_right)
+map("n", "<C-\\>", require("smart-splits").move_cursor_previous)
