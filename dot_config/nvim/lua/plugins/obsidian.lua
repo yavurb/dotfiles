@@ -3,6 +3,7 @@ return {
     "epwalsh/obsidian.nvim",
     version = "*",
     opts = {
+      ui = { enable = false },
       workspaces = {
         { name = "dev", path = "~/vaults/dev" },
         { name = "zumma", path = "~/vaults/zumma" },
