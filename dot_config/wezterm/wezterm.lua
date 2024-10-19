@@ -87,6 +87,11 @@ config.keys = {
 		key = "a",
 		action = wezterm.action.ActivateLastTab,
 	},
+	{
+		mods = "LEADER",
+		key = "z",
+		action = wezterm.action.TogglePaneZoomState,
+	},
 }
 
 wezterm.on("update-right-status", function(window, _)
