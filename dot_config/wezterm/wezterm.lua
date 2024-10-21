@@ -9,9 +9,12 @@ config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.color_scheme = "Catppuccin Mocha"
 
--- config.macos_window_background_blur = 30
--- config.window_background_opacity = 0.95
+config.macos_window_background_blur = 30
+config.window_background_opacity = 0.95
 config.window_decorations = "RESIZE"
+config.window_padding = {
+	bottom = 0,
+}
 config.colors = {
 	background = "#0e0e0e",
 	cursor_fg = "#0e0e0e",
