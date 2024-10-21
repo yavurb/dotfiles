@@ -17,6 +17,7 @@ config.colors = {
 	cursor_fg = "#0e0e0e",
 	selection_fg = "#0e0e0e",
 }
+config.tab_max_width = 25
 
 local function is_vim(pane)
 	-- this is set by the plugin, and unset on ExitPre in Neovim
@@ -114,6 +115,46 @@ wezterm.on("update-right-status", function(window, _)
 		ARROW_FOREGROUND,
 		{ Text = SOLID_LEFT_ARROW },
 	}))
+end)
+
+local function split(input, delimiter)
+	local result = {}
+	for match in (input .. delimiter):gmatch("(.-)" .. delimiter) do
+		table.insert(result, match)
+	end
+	return result
+end
+
+local function starts_with(str, prefix)
+	return string.sub(str, 1, #prefix) == prefix
+end
+
+local function tab_title(tab_info)
+	local title = tab_info.tab_title
+	-- if the tab title is explicitly set, take that
+	if title and #title > 0 then
+		return title
+	end
+	-- Otherwise, use the title from the active pane
+	-- in that tab
+	return tab_info.active_pane.title
+end
+
+wezterm.on("format-tab-title", function(tab)
+	local title = tab_title(tab)
+	local title_path_elements = split(title, "/")
+	local final_title = ""
+
+	if #title_path_elements > 1 then
+		final_title = final_title .. title_path_elements[#title_path_elements]
+		if starts_with(title, "nvim") then
+			final_title = "nvim(" .. final_title .. ")"
+		end
+	else
+		final_title = title
+	end
+
+	return " " .. (tab.tab_index + 1) .. ": " .. final_title .. " "
 end)
 
 return config
