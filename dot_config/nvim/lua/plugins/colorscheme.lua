@@ -86,22 +86,6 @@ return {
     priority = 1000,
     opts = {
       flavour = "mocha",
-      color_overrides = {
-        mocha = {
-          base = "#0e0e0e",
-          mantle = "#0e0e0e",
-          crust = "#0e0e0e",
-        },
-      },
-      highlight_overrides = {
-        mocha = function(colors)
-          return {
-            CursorLine = { bg = colors.base },
-            TelescopePromptBorder = { fg = colors.green, bg = colors.none },
-            TelescopeBorder = { fg = colors.green, bg = colors.none },
-          }
-        end,
-      },
       transparent_background = true,
       default_integrations = true,
       integrations = {
