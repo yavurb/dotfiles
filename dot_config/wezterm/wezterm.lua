@@ -21,6 +21,7 @@ config.colors = {
 	selection_fg = "#0e0e0e",
 }
 config.tab_max_width = 25
+config.send_composed_key_when_left_alt_is_pressed = true
 
 local function is_vim(pane)
 	-- this is set by the plugin, and unset on ExitPre in Neovim
