@@ -3,7 +3,8 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 config.scrollback_lines = 50000
-config.font = wezterm.font("Maple Mono NF")
+config.font = wezterm.font("JetBrainsMono Nerd Font")
+-- config.font = wezterm.font("Maple Mono NF")
 config.font_size = 15.0
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
@@ -21,7 +22,7 @@ config.colors = {
 	selection_fg = "#0e0e0e",
 }
 config.tab_max_width = 25
-config.send_composed_key_when_left_alt_is_pressed = true
+-- config.send_composed_key_when_left_alt_is_pressed = true
 
 local function is_vim(pane)
 	-- this is set by the plugin, and unset on ExitPre in Neovim
