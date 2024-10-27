@@ -65,6 +65,16 @@ config.keys = {
 	split_nav("move", "l"),
 	{
 		mods = "LEADER",
+		key = "b",
+		action = wezterm.action.RotatePanes("CounterClockwise"),
+	},
+	{
+		mods = "LEADER",
+		key = "x",
+		action = wezterm.action.CloseCurrentPane({ confirm = true }),
+	},
+	{
+		mods = "LEADER",
 		key = "w",
 		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 	},
