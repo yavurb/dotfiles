@@ -93,13 +93,6 @@ return {
           crust = "#0e0e0e",
         },
       },
-      highlight_overrides = {
-        mocha = function(colors)
-          return {
-            CursorLine = { bg = colors.base },
-          }
-        end,
-      },
       transparent_background = true,
       default_integrations = true,
       integrations = {
