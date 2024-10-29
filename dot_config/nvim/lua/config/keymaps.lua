@@ -7,6 +7,7 @@ local map = vim.keymap.set
 map("n", "ss", "<cmd>w<cr>", { silent = true })
 
 -- Obsidian keymaps
+map("n", "<leader>o", "", { silent = true, desc = "Obsidian" })
 map("n", "<leader>os", "<cmd>ObsidianSearch<cr>", { silent = true, desc = "Search in current vault" })
 map("n", "<leader>ow", "<cmd>ObsidianWorkspace<cr>", { silent = true, desc = "Set the current vault" })
 map("n", "<leader>of", "<cmd>ObsidianQuickSwitch<cr>", { silent = true, desc = "Quick switch to a note" })
@@ -31,3 +32,7 @@ map("n", "<C-j>", require("smart-splits").move_cursor_down)
 map("n", "<C-k>", require("smart-splits").move_cursor_up)
 map("n", "<C-l>", require("smart-splits").move_cursor_right)
 map("n", "<C-\\>", require("smart-splits").move_cursor_previous)
+
+-- GitBlame keymaps
+map("n", "<leader>ga", "", { silent = true, desc = "Extras" })
+map("n", "<leader>gac", "<cmd>GitBlameCopySHA<cr>", { silent = true, desc = "Copy commit SHA" })
