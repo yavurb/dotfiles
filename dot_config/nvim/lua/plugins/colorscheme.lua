@@ -96,7 +96,8 @@ return {
       highlight_overrides = {
         mocha = function(colors)
           return {
-            CursorLine = { bg = colors.base },
+            LspInlayHint = { bg = colors.none },
+            CursorLine = { bg = colors.none },
           }
         end,
       },
