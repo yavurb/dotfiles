@@ -2,6 +2,7 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
+config.max_fps = 120
 config.scrollback_lines = 50000
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 -- config.font = wezterm.font("Maple Mono NF")
