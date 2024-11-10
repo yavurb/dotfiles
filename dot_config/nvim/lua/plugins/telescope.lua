@@ -5,11 +5,20 @@ return {
       defaults = {
         pickers = {
           find_files = {
-            hidden = true,
+            no_ignore = true,
+            no_ignore_parent = true,
+            cwd = function()
+              return require("telescope").actions.utils.buffer_dir()
+            end,
           },
         },
+        -- preview = {
+        --   filesize_limit = 0.3, -- MB
+        -- },
         path_display = {
-          "filename_first",
+          filename_first = {
+            reverse_direcytory = true,
+          },
         },
         layout_strategy = "horizontal",
         layout_config = {
