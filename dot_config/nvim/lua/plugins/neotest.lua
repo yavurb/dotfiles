@@ -14,7 +14,7 @@ return {
           dap_go_enabled = true,
         },
         ["neotest-python"] = {
-          args = { "-vv" },
+          args = { "-vv", "--log-cli-level=INFO" },
         },
       },
     },
