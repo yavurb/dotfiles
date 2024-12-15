@@ -1,18 +1,22 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
-
 config.max_fps = 120
 config.scrollback_lines = 50000
-config.font = wezterm.font("JetBrainsMono Nerd Font")
+-- config.font = wezterm.font("JetBrainsMono Nerd Font")
 -- config.font = wezterm.font("Maple Mono NF")
+config.font = wezterm.font({
+	family = "FiraCode Nerd Font",
+	weight = "Regular",
+	harfbuzz_features = { "zero", "ss04", "ss06", "cv14", "cv15", "cv29" },
+})
 config.font_size = 15.0
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.color_scheme = "Catppuccin Mocha"
 
-config.macos_window_background_blur = 30
-config.window_background_opacity = 0.95
+-- config.macos_window_background_blur = 30
+-- config.window_background_opacity = 0.95
 config.window_decorations = "RESIZE"
 config.window_padding = {
 	bottom = 0,

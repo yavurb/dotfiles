@@ -101,7 +101,7 @@ return {
           }
         end,
       },
-      transparent_background = true,
+      -- transparent_background = true,
       default_integrations = true,
       integrations = {
         telescope = {
