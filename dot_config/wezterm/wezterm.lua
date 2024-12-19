@@ -25,6 +25,9 @@ config.colors = {
 	background = "#0e0e0e",
 	cursor_fg = "#0e0e0e",
 	selection_fg = "#0e0e0e",
+	tab_bar = {
+		background = "#0e0e0e",
+	},
 }
 config.tab_max_width = 25
 -- config.send_composed_key_when_left_alt_is_pressed = true
