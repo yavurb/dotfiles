@@ -9,9 +9,14 @@ return {
           ["--marker"] = "+",
         },
         winopts = {
-          preview = { winopts = {
-            number = true,
-          } },
+          preview = {
+            winopts = {
+              number = true,
+            },
+          },
+        },
+        files = {
+          formatter = "path.filename_first",
         },
       })
     end,
