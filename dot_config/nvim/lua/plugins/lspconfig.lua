@@ -6,5 +6,8 @@ return {
         return true
       end,
     },
+    diagnostics = {
+      virtual_text = false,
+    },
   },
 }

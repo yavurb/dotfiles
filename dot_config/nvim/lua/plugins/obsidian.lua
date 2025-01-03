@@ -2,6 +2,7 @@ return {
   {
     "epwalsh/obsidian.nvim",
     version = "*",
+    event = "VeryLazy",
     opts = {
       ui = { enable = false },
       workspaces = {
