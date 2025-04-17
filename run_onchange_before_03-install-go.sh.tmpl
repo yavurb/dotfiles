@@ -4,7 +4,7 @@
 brew install go
 {{ else if eq .chezmoi.os "linux" -}}
 
-wget -O go-installer.tar.gz https://go.dev/dl/go1.23.1.linux-amd64.tar.gz
+wget -O go-installer.tar.gz https://go.dev/dl/go1.24.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go-installer.tar.gz
 
 # Remove temporal files

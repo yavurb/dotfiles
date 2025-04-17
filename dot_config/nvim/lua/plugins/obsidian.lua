@@ -1,8 +1,9 @@
 return {
   {
-    "epwalsh/obsidian.nvim",
+    "obsidian-nvim/obsidian.nvim",
     version = "*",
     event = "VeryLazy",
+    lazy = true,
     opts = {
       ui = { enable = false },
       workspaces = {
