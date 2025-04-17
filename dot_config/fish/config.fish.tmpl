@@ -62,3 +62,18 @@ uvx --generate-shell-completion fish | source
 if [ -f '/Users/yurb/google-cloud-sdk/path.fish.inc' ]
     . '/Users/yurb/google-cloud-sdk/path.fish.inc'
 end
+
+# pnpm
+set -gx PNPM_HOME /Users/yurb/Library/pnpm
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
+
+{{ if eq .chezmoi.os "darwin" }}
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.fish 2>/dev/null || :
+
+{{ end }}

@@ -2,11 +2,12 @@ return {
   {
     "sainnhe/everforest",
     lazy = true,
+    version = false,
     enable = false,
-    config = function()
-      vim.g.everforest_background = "hard"
-      vim.g.everforest_enable_italic = true
-    end,
+    opts = {
+      background = "hard",
+      italics = true,
+    },
   },
   {
     "sainnhe/gruvbox-material",
